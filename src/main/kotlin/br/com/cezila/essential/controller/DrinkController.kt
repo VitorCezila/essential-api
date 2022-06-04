@@ -4,13 +4,14 @@ import br.com.cezila.essential.dto.DrinkView
 import br.com.cezila.essential.dto.NewDrinkForm
 import br.com.cezila.essential.service.DrinkService
 import org.springframework.http.ResponseEntity
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.util.UriComponentsBuilder
-import javax.transaction.Transactional
 import javax.validation.Valid
 
 @RestController
@@ -29,7 +30,12 @@ class DrinkController(private val service: DrinkService) {
         uriBuilder: UriComponentsBuilder
     ): ResponseEntity<DrinkView> {
         val drinkView = service.registerDrink(form)
-        val uri = uriBuilder.path("/drinks/${drinkView.id}").build().toUri()
+        val uri = uriBuilder.path("").build().toUri()
         return ResponseEntity.created(uri).body(drinkView)
+    }
+
+    @GetMapping("/{id}")
+    fun findDrinkById(@PathVariable id: String): DrinkView {
+        return service.findDrinkById(id)
     }
 }

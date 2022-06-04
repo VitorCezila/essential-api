@@ -1,13 +1,15 @@
 package br.com.cezila.essential.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
+import org.springframework.data.annotation.Id
+import org.springframework.data.mongodb.core.mapping.Document
+import javax.validation.constraints.NotNull
 
-@Entity
+@Document
 data class Ingredient(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
-    val name: String
+    @Id
+    var id: String? = null,
+    @NotNull
+    val name: String,
+    @NotNull
+    val type: IngredientType
 )

@@ -13,12 +13,18 @@ class IngredientService(
         return repository.findAll()
     }
 
-    fun queryIngredientsById(id: Long): Ingredient  {
-        return repository.getReferenceById(id)
+    fun queryIngredientsById(id: String): Ingredient  {
+        return repository.findById(id).get()
     }
 
     fun registerIngredient(ingredient: Ingredient) {
+        val id = repository.findAll().size + 1
+        ingredient.id = id.toString()
         repository.save(ingredient)
+    }
+
+    fun deleteIgredient(id: String) {
+        repository.deleteById(id)
     }
 
 }
