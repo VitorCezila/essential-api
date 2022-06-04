@@ -30,7 +30,7 @@ class DrinkController(private val service: DrinkService) {
         uriBuilder: UriComponentsBuilder
     ): ResponseEntity<DrinkView> {
         val drinkView = service.registerDrink(form)
-        val uri = uriBuilder.path("").build().toUri()
+        val uri = uriBuilder.path("/drinks/${drinkView.id}").build().toUri()
         return ResponseEntity.created(uri).body(drinkView)
     }
 
