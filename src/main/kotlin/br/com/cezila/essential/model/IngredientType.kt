@@ -3,5 +3,6 @@ package br.com.cezila.essential.model
 enum class IngredientType {
     Alcohol,
     Juice,
-    Garnish
+    Garnish,
+    Extra
 }
