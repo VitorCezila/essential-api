@@ -11,7 +11,7 @@ class MeasurementsFormMapper(
 ): Mapper<MeasurementsForm, Measurements> {
     override fun map(t: MeasurementsForm): Measurements {
         return Measurements(
-            ingredient = ingredientService.queryIngredientsById(t.ingredientId),
+            ingredient = ingredientService.queryIngredientsById(t.ingredientId.toString()),
             amount = t.amount,
             unit = t.unit
         )

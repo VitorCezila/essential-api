@@ -3,7 +3,7 @@ package br.com.cezila.essential.dto
 import br.com.cezila.essential.model.Steps
 
 data class DrinkView(
-    val id: Long?,
+    val id: String?,
     val name: String,
     val description: String?,
     val alcoholContent: Int,

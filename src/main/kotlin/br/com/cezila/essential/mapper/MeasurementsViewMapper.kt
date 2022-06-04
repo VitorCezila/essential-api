@@ -9,6 +9,7 @@ class MeasurementsViewMapper: Mapper<Measurements, MeasurementsView> {
 
     override fun map(t: Measurements): MeasurementsView {
         return MeasurementsView(
+            id = t.ingredient.id,
             name = t.ingredient.name,
             amount = t.amount,
             unit = t.unit,

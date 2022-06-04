@@ -2,8 +2,8 @@ package br.com.cezila.essential.controller
 
 import br.com.cezila.essential.model.Ingredient
 import br.com.cezila.essential.service.IngredientService
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.*
-import javax.transaction.Transactional
 import javax.validation.Valid
 
 @RestController
@@ -23,6 +23,17 @@ class IngredientController(
         @RequestBody @Valid form: Ingredient
     ) {
         service.registerIngredient(form)
+    }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    fun deleteDrink(@PathVariable id: String) {
+        return service.deleteIgredient(id)
+    }
+
+    @GetMapping("/{id}")
+    fun findDrinkById(@PathVariable id: String): Ingredient {
+        return service.queryIngredientsById(id)
     }
 
 }
