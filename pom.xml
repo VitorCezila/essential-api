@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.com.cezila</groupId>
-	<artifactId>essential</artifactId>
+	<artifactId>essential-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>essential</name>
 	<description>My first app Idea</description>
