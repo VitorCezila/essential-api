@@ -7,11 +7,11 @@ import org.springframework.data.mongodb.core.mapping.Document
 data class Drink(
     @Id
     var id: String? = null,
-    val name: String,
-    val description: String?,
-    val alcoholContent: Int,
-    val difficulty: Int,
-    val measurements: List<Measurements>,
-    val steps: List<Steps>,
-    val author: String?
+    var name: String,
+    var description: String?,
+    var alcoholContent: Int,
+    var difficulty: Int,
+    var measurements: List<Measurements>,
+    var steps: List<Steps>,
+    var author: String?
 )

@@ -9,7 +9,7 @@ data class Ingredient(
     @Id
     var id: String? = null,
     @NotNull
-    val name: String,
+    var name: String,
     @NotNull
-    val type: IngredientType
+    var type: IngredientType
 )
