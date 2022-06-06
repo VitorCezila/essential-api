@@ -9,7 +9,7 @@ data class UpdateDrinkForm (
     @field:NotNull(message = "Id field cannot be null")
     @field:NotEmpty(message = "Id field cannot be empty")
     val id: String,
-
+    val image: String?,
     val name: String?,
     val description: String?,
     val alcoholContent: Int?,

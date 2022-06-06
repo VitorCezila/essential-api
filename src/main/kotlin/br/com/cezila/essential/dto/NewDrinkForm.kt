@@ -8,6 +8,9 @@ data class NewDrinkForm(
     @field:NotEmpty(message = "Name field cannot be empty")
     val name: String,
 
+    @field:NotEmpty(message = "Image field cannot be empty")
+    val image: String,
+
     @field:NotEmpty(message = "Description field cannot be empty")
     val description: String,
 
