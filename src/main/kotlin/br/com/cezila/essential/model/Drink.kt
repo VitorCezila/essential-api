@@ -8,6 +8,7 @@ data class Drink(
     @Id
     var id: String? = null,
     var name: String,
+    var image: String,
     var description: String?,
     var alcoholContent: Int,
     var difficulty: Int,

@@ -66,6 +66,7 @@ class DrinkService(
         drink.run {
             id = form.id
             name = form.name ?: name
+            image = form.image ?: image
             description = form.description ?: description
             alcoholContent = form.alcoholContent ?: alcoholContent
             difficulty = form.difficulty ?: difficulty
