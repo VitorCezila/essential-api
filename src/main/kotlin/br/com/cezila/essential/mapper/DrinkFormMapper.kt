@@ -14,6 +14,7 @@ class DrinkFormMapper(
     override fun map(t: NewDrinkForm): Drink {
         return Drink(
             name = t.name,
+            image = t.image,
             description = t.description,
             alcoholContent = t.alcoholContent,
             difficulty = t.difficulty,

@@ -13,6 +13,7 @@ class DrinkViewMapper(
     override fun map(t: Drink): DrinkView {
         return DrinkView(
             id = t.id,
+            image = t.image,
             name = t.name,
             description = t.description,
             alcoholContent = t.alcoholContent,
