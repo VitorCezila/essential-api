@@ -13,7 +13,8 @@ class MeasurementsViewMapper: Mapper<Measurements, MeasurementsView> {
             name = t.ingredient.name,
             amount = t.amount,
             unit = t.unit,
-            originalName = "${t.amount} ${t.unit}"
+            originalName = "${t.amount} ${t.unit}",
+            ingredientType = t.ingredient.type
         )
     }
 }
