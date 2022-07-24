@@ -9,7 +9,7 @@ data class MeasurementsForm (
     val ingredientId: Long,
 
     @field:NotNull(message = "Amount ingredient cannot be null")
-    val amount: Float,
+    val amount: String,
 
     @field:NotEmpty(message = "Unit ingredient cannot be empty")
     val unit: String
